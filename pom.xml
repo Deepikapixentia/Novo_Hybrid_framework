@@ -3,6 +3,9 @@
   <groupId>com.chasmaNOVO</groupId>
   <artifactId>Novo_Hybrid_FrameWork</artifactId>
   <version>0.0.1-SNAPSHOT</version>
+  <properties>
+  <suiteXmlFile>testng.xml</suiteXmlFile>
+</properties>
    <build>  
       <plugins>
         <plugin>
@@ -21,7 +24,7 @@
         <version>3.5.4</version>
         <configuration>
           <suiteXmlFiles>
-            <suiteXmlFile>testng.xml</suiteXmlFile>
+            <suiteXmlFile>${suiteXmlFile}</suiteXmlFile>
           </suiteXmlFiles>
         </configuration>
       </plugin>        
@@ -70,11 +73,21 @@
 </dependency>
 
 <dependency>
-		    <groupId>org.slf4j</groupId>
-		    <artifactId>slf4j-simple</artifactId>
-		    <version>2.0.16</version>
-		    <scope>test</scope>
-		</dependency>
-  
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-api</artifactId>
+  <version>2.23.1</version>
+</dependency>
+
+<dependency>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-core</artifactId>
+  <version>2.23.1</version>
+</dependency>
+
+<dependency>
+  <groupId>org.apache.logging.log4j</groupId>
+  <artifactId>log4j-slf4j2-impl</artifactId>
+  <version>2.23.1</version>
+</dependency>
   </dependencies>
 </project>

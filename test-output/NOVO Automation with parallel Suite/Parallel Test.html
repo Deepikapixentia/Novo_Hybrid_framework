@@ -1,0 +1,120 @@
+<html>
+<head>
+<title>TestNG:  Parallel Test</title>
+<link href="../testng.css" rel="stylesheet" type="text/css" />
+<link href="../my-testng.css" rel="stylesheet" type="text/css" />
+
+<style type="text/css">
+.log { display: none;} 
+.stack-trace { display: none;} 
+</style>
+<script type="text/javascript">
+<!--
+function flip(e) {
+  current = e.style.display;
+  if (current == 'block') {
+    e.style.display = 'none';
+    return 0;
+  }
+  else {
+    e.style.display = 'block';
+    return 1;
+  }
+}
+
+function toggleBox(szDivId, elem, msg1, msg2)
+{
+  var res = -1;  if (document.getElementById) {
+    res = flip(document.getElementById(szDivId));
+  }
+  else if (document.all) {
+    // this is the way old msie versions work
+    res = flip(document.all[szDivId]);
+  }
+  if(elem) {
+    if(res == 0) elem.innerHTML = msg1; else elem.innerHTML = msg2;
+  }
+
+}
+
+function toggleAllBoxes() {
+  if (document.getElementsByTagName) {
+    d = document.getElementsByTagName('div');
+    for (i = 0; i < d.length; i++) {
+      if (d[i].className == 'log') {
+        flip(d[i]);
+      }
+    }
+  }
+}
+
+// -->
+</script>
+
+</head>
+<body>
+<h2 align='center'>Parallel Test</h2><table border='1' align="center">
+<tr>
+<td>Tests passed/Failed/Skipped:</td><td>8/0/0</td>
+</tr><tr>
+<td>Started on:</td><td>Mon Feb 09 14:39:32 IST 2026</td>
+</tr>
+<tr><td>Total time:</td><td>129 seconds (129838 ms)</td>
+</tr><tr>
+<td>Included groups:</td><td></td>
+</tr><tr>
+<td>Excluded groups:</td><td></td>
+</tr>
+</table><p/>
+<small><i>(Hover the method name to see the test class name)</i></small><p/>
+<table width='100%' border='1' class='invocation-passed'>
+<tr><td colspan='4' align='center'><b>PASSED TESTS</b></td></tr>
+<tr><td><b>Test method</b></td>
+<td><b>Attribute(s)</b></td>
+<td width="30%"><b>Exception</b></td>
+<td width="10%"><b>Time (seconds)</b></td>
+<td><b>Instance</b></td>
+</tr>
+<tr>
+<td title='smoke.LoginWithdataproviderPOM.login()'><b>login</b><br>Test class: smoke.LoginWithdataproviderPOM<br>Parameters: {Expected Title=ChasmaNOVO, UserName=bdatla@phenom.com, TestCaseID=TC_login-003, ExpectedErrorMessage=Incorrect username or password., ExpectedUserNameErrorMessage=, ExpectedPasswordErrorMessage=, Password=Test123$}</td>
+<td></td>
+<td>4</td>
+<td>smoke.LoginWithdataproviderPOM@6ff65192</td></tr>
+<tr>
+<td title='regression.GAdmin_HomewithPOM.homePageRedirectionsvalidation()'><b>homePageRedirectionsvalidation</b><br>Test class: regression.GAdmin_HomewithPOM</td>
+<td></td>
+<td>60</td>
+<td>regression.GAdmin_HomewithPOM@674bd420</td></tr>
+<tr>
+<td title='smoke.LoginWithdataproviderPOM.login()'><b>login</b><br>Test class: smoke.LoginWithdataproviderPOM<br>Parameters: {Expected Title=ChasmaNOVO, UserName=bdatla@phenom.com, TestCaseID=TC_login-004, ExpectedErrorMessage=Incorrect username or password., ExpectedUserNameErrorMessage=, ExpectedPasswordErrorMessage=, Password=test1234}</td>
+<td></td>
+<td>2</td>
+<td>smoke.LoginWithdataproviderPOM@6ff65192</td></tr>
+<tr>
+<td title='smoke.LoginWithdataproviderPOM.login()'><b>login</b><br>Test class: smoke.LoginWithdataproviderPOM<br>Parameters: {Expected Title=ChasmaNOVO, UserName=bdatla@pixentia.com, TestCaseID=TC_login-002, ExpectedErrorMessage=Incorrect username or password., ExpectedUserNameErrorMessage=, ExpectedPasswordErrorMessage=, Password=Test1234}</td>
+<td></td>
+<td>2</td>
+<td>smoke.LoginWithdataproviderPOM@6ff65192</td></tr>
+<tr>
+<td title='regression.SignUPWithPOM.SignUPValidation()'><b>SignUPValidation</b><br>Test class: regression.SignUPWithPOM<br>Parameters: {Zip=520015, ConfPassword=Test123$, Email=test@pixentia.com, FirstName=Deepika, Address2=sign nagar, TestCaseID=TC_signup-001, Address1=Pipul Road, City=vijayawada, Emailexisterrormessage=Email already Exists , State=Andhra Pradesh, Country=Bharat, LastName=Lakkamraju, SuccessToasterMessage=, Password=Test123$}</td>
+<td></td>
+<td>10</td>
+<td>regression.SignUPWithPOM@57ea113a</td></tr>
+<tr>
+<td title='smoke.LoginWithdataproviderPOM.login()'><b>login</b><br>Test class: smoke.LoginWithdataproviderPOM<br>Parameters: {Expected Title=Home, UserName=bdatla@pixentia.com, TestCaseID=TC_login-001, ExpectedErrorMessage=, ExpectedUserNameErrorMessage=, ExpectedPasswordErrorMessage=, Password=Test123$}</td>
+<td></td>
+<td>10</td>
+<td>smoke.LoginWithdataproviderPOM@6ff65192</td></tr>
+<tr>
+<td title='regression.StepperPOM.stepperpagetest()'><b>stepperpagetest</b><br>Test class: regression.StepperPOM<br>Parameters: {SkillName=Apache JMeter, SkillLevel=Beginner, Username=automationtest@pixentia.com, FirstName=Automation, JobCategory=Software Quality Assurance, TestCaseID=TC_stepper-001, LastName=Test, InterestData=Testing, Password=Test123$}</td>
+<td></td>
+<td>33</td>
+<td>regression.StepperPOM@acdb094</td></tr>
+<tr>
+<td title='smoke.LoginWithdataproviderPOM.login()'><b>login</b><br>Test class: smoke.LoginWithdataproviderPOM<br>Parameters: {Expected Title=ChasmaNOVO, UserName=, TestCaseID=TC_login-005, ExpectedErrorMessage=, ExpectedUserNameErrorMessage=Username is required, ExpectedPasswordErrorMessage=Password is required, Password=}</td>
+<td></td>
+<td>0</td>
+<td>smoke.LoginWithdataproviderPOM@6ff65192</td></tr>
+</table><p>
+</body>
+</html>

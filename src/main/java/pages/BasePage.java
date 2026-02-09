@@ -13,36 +13,38 @@ import org.testng.Assert;
 import com.aventstack.extentreports.Status;
 
 import base.BaseTest;
+import driverfactory.DriverFactory;
+import utils.ExtentTestManager;
 
 public class BasePage extends BaseTest {
 	public WebDriverWait wait;
 
 	// Add a constructor to initialize the WebDriverWait object and page factory
 	public BasePage() {
-		PageFactory.initElements(driver, this);
-		this.wait = new WebDriverWait(driver, Duration.ofSeconds(Long.parseLong(conprop.getProperty("explicitwait"))));
+		PageFactory.initElements(DriverFactory.getDriver(), this);
+		this.wait = new WebDriverWait(DriverFactory.getDriver(), Duration.ofSeconds(Long.parseLong(conprop.getProperty("explicitwait"))));
 	}
 
 	public void type(WebElement element, String text) {
 		wait.until(ExpectedConditions.visibilityOf(element));
 		element.sendKeys(text);
-		test.log(Status.INFO, "entered the data "+text);
+		ExtentTestManager.getTest().log(Status.INFO, "entered the data "+text);
 	}
 
 	public void click(WebElement element) {
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		element.click();
-		test.log(Status.INFO, "clicked on the element");
+		ExtentTestManager.getTest().log(Status.INFO, "clicked on the element");
 	}
 
 	public void clickwithJSExecutor(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 		js.executeScript("arguments[0].click()", element);
 	}
 
 	public void scrollToElementUsingJS(WebElement element) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("arguments[0].scrollInToView({block:'center'})", element);
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
+		js.executeScript("arguments[0].scrollIntoView({block:'center'})", element);
 	}
 
 	public void select(WebElement element, String option) {
@@ -52,13 +54,13 @@ public class BasePage extends BaseTest {
 
 	public String getTitle() {
 		// wait.until(ExpectedConditions.titleContains(conprop.getProperty("title")));
-		return driver.getTitle();
+		return DriverFactory.getDriver().getTitle();
 	}
 
 	public String titleValidate(String expectedTitle) {
 		wait.until(ExpectedConditions.titleIs(expectedTitle));
 		Assert.assertEquals(getTitle(), expectedTitle);
-		test.log(Status.PASS, "actual title is matched with expected title");
+		ExtentTestManager.getTest().log(Status.PASS, "actual title is matched with expected title");
 		return expectedTitle;
 	}
 
@@ -76,7 +78,7 @@ public class BasePage extends BaseTest {
 
 	public String getInputValueUsingJS(WebElement element) {
 		wait.until(ExpectedConditions.visibilityOf(element));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 		// 'arguments[0].value' returns the actual text inside the input box
 		String text = (String) js.executeScript("return arguments[0].value;", element);
 		return text;

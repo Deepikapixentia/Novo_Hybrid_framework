@@ -1,10 +1,12 @@
-base\BaseTest.class
+driverfactory\DriverFactory.class
 pages\BasePage.class
 pages\LoginPage.class
 pages\StepperPage.class
 pages\HomePage.class
-pages\SignUpPage.class
 exceptions\InValidBrowserException.class
+base\BaseTest.class
+utils\ExtentTestManager.class
+pages\SignUpPage.class
 utils\TestNGListeners.class
 pages\GAdmin_HomePage.class
 utils\ExtentManager.class

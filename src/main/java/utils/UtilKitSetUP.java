@@ -18,6 +18,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
 import base.BaseTest;
+import driverfactory.DriverFactory;
 
 public class UtilKitSetUP extends BaseTest {
 
@@ -75,7 +76,7 @@ public class UtilKitSetUP extends BaseTest {
 		
 		File screenshitfile=new File(screenshotfilepath);
 		
-		File srcfile=((TakesScreenshot)driver).getScreenshotAs(OutputType.FILE);
+		File srcfile=((TakesScreenshot)DriverFactory.getDriver()).getScreenshotAs(OutputType.FILE);
 		try {
 			FileUtils.copyFile(srcfile, screenshitfile);
 		} catch (IOException e) {

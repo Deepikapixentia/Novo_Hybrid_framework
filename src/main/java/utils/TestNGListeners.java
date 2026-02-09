@@ -11,25 +11,25 @@ public class TestNGListeners extends UtilKitSetUP implements ITestListener{
 
 	@Override
 	public void onTestStart(ITestResult result) {
-	test.log(Status.INFO, result.getMethod().getMethodName()+" is started....");
+	ExtentTestManager.getTest().log(Status.INFO, result.getMethod().getMethodName()+" is started....");
 	
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		test.addScreenCaptureFromPath(UtilKitSetUP.getScreenShot());
-		test.log(Status.PASS, result.getMethod().getMethodName()+" is success....");
+		ExtentTestManager.getTest().addScreenCaptureFromPath(UtilKitSetUP.getScreenShot());
+		ExtentTestManager.getTest().log(Status.PASS, result.getMethod().getMethodName()+" is success....");
 	}
 
 	@Override
 	public void onTestFailure(ITestResult result) {
-		test.addScreenCaptureFromPath(UtilKitSetUP.getScreenShot());
-		test.log(Status.FAIL, result.getMethod().getMethodName()+" is failed....");
+		ExtentTestManager.getTest().addScreenCaptureFromPath(UtilKitSetUP.getScreenShot());
+		ExtentTestManager.getTest().log(Status.FAIL, result.getMethod().getMethodName()+" is failed....");
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		test.log(Status.SKIP, result.getMethod().getMethodName()+" is skipped....");
+		ExtentTestManager.getTest().log(Status.SKIP, result.getMethod().getMethodName()+" is skipped....");
 	}
 
 	@Override

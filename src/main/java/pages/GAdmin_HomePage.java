@@ -5,6 +5,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
+import driverfactory.DriverFactory;
+
 public class GAdmin_HomePage extends BasePage {
 
 	  @FindBy(xpath = "//div[contains(@class,'card purple')]//button")
@@ -39,25 +41,25 @@ public class GAdmin_HomePage extends BasePage {
 		wait.until(ExpectedConditions.elementToBeClickable(userstabviewbutton));			
 	//	click(userstabviewbutton);
 		
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 		js.executeScript("arguments[0].click();", userstabviewbutton);
 	}
 
 	public void learningJourneyTabView() {
 		wait.until(ExpectedConditions.elementToBeClickable(learnjourneytabviewbutton));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 		js.executeScript("arguments[0].click();", learnjourneytabviewbutton);
 	}
 
 	public void gamificationTabView() {
 		wait.until(ExpectedConditions.elementToBeClickable(gamificationtabviewbutton));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 		js.executeScript("arguments[0].click();", gamificationtabviewbutton);
 	}
 
 	public void assessmentsTabView() {
 		wait.until(ExpectedConditions.elementToBeClickable(assessementtabviewbutton));
-		JavascriptExecutor js = (JavascriptExecutor) driver;
+		JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 		js.executeScript("arguments[0].click();", assessementtabviewbutton);
 	}
 
@@ -73,7 +75,7 @@ public class GAdmin_HomePage extends BasePage {
 				e.printStackTrace();
 			}
 			// It is safer to use JS click here too if the menu is finicky
-			JavascriptExecutor js = (JavascriptExecutor) driver;
+			JavascriptExecutor js = (JavascriptExecutor) DriverFactory.getDriver();
 			js.executeScript("arguments[0].click();", homebutton);
 		}
 	}

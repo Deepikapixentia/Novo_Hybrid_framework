@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite thread-count="5" parallel="classes" name="NOVO Automation with parallel Suite">
+<listeners>
+<listener class-name="utils.TestNGListeners"></listener>
+</listeners>
+  <test  name="Parallel Test">
+    <classes>
+       <class name="smoke.LoginWithdataproviderPOM"/>
+      <class name="regression.SignUPWithPOM"/>
+      <class name="regression.StepperPOM"/>
+      <class name="regression.GAdmin_HomewithPOM"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->
