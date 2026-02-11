@@ -97,7 +97,7 @@ public class StepperPage extends BasePage {
 	    type(SelectJobTitle, jobcategoryname);
 
 	    // 2. Small static wait for animation
-	    try { Thread.sleep(2000); } catch (InterruptedException e) {}
+	    try { Thread.sleep(5000); } catch (InterruptedException e) {}
 
 	    String optionXpath = "//mat-option[contains(@class,'mat-mdc-option mdc-list-item') and normalize-space()='" + jobcategoryname + "']";
 
@@ -121,7 +121,9 @@ public class StepperPage extends BasePage {
 	// interests methods
 
 	public void clickOnInterestField() {
-		click(SelectInterests);
+		scrollToElementUsingJS(SelectInterests);
+		clickwithJSExecutor(SelectInterests);
+	//	click(SelectInterests);
 	}
 
 	public void selectInterestFromDropdown(String interestname) {
@@ -129,7 +131,7 @@ public class StepperPage extends BasePage {
 	    type(SelectInterests, interestname);
 
 	    // 1. Wait for list to filter
-	    try { Thread.sleep(2000); } catch (InterruptedException e) {}
+	    try { Thread.sleep(5000); } catch (InterruptedException e) {}
 
 	    String optionXpath = "//mat-option[contains(@class,'mat-mdc-option mdc-list-item')" + "and normalize-space()='"
 	            + interestname + "']";
@@ -165,14 +167,16 @@ public class StepperPage extends BasePage {
 	// skill methods
 
 	public void clickOnSkillsField() {
-		click(SelectSkills);
+		scrollToElementUsingJS(SelectSkills);
+		clickwithJSExecutor(SelectSkills);
+		//click(SelectSkills);
 	}
 
 	public void selectSkillFromDropdown(String skillname) {
 	    type(SelectSkills, skillname);
 	    
 	    // 1. Wait for list to filter
-	    try { Thread.sleep(2000); } catch (InterruptedException e) {}
+	    try { Thread.sleep(5000); } catch (InterruptedException e) {}
 
 	    // Note: I used the XPath from your code that was active
 	    String optionXpath = "//span[contains(@class,'mdc-list-item__primary-text')" + "and normalize-space()='"

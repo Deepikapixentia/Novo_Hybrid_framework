@@ -6,8 +6,8 @@
       <class name="regression.StepperPOM">
         <methods>
           <include name="tearDown"/>
-          <include name="stepperpagetest" invocation-numbers="0"/>
           <include name="fileConfiuration"/>
+          <include name="stepperpagetest" invocation-numbers="0"/>
           <include name="browserSetup"/>
           <include name="reportsFlush"/>
         </methods>

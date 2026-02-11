@@ -28,6 +28,7 @@ public class StepperPOM extends BaseTest {
 		sp.getFirstNameTexts(gettestdata.get("FirstName"));
 		sp.getLastNameTexts(gettestdata.get("LastName"));
 	//	sp.getCurrentJobTitle(gettestdata.get("JobCategory"));
+	
 		sp.selectJobCategoryFromDropdown(gettestdata.get("JobCategory"));
 		sp.clickOnDetailsNextButton();
 		sp.clickOnInterestField();
